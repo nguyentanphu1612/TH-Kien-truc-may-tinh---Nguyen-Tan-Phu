@@ -1,0 +1,35 @@
+@StudentAPI_HostAddress = https://localhost:7063
+@StudentAPI_HostAddress_Http = http://localhost:5163
+
+### GET all students
+GET {{StudentAPI_HostAddress}}/api/students
+Accept: application/json
+
+### GET student by ID
+GET {{StudentAPI_HostAddress}}/api/students/1
+Accept: application/json
+
+### GET student by ID (not exist)
+GET {{StudentAPI_HostAddress}}/api/students/999
+Accept: application/json
+
+### POST create new student
+POST {{StudentAPI_HostAddress}}/api/students
+Content-Type: application/json
+
+{
+  "name": "Nguyen Van A",
+  "email": "a@gmail.com"
+}
+
+### PUT update student
+PUT {{StudentAPI_HostAddress}}/api/students/1
+Content-Type: application/json
+
+{
+  "name": "Updated Name",
+  "email": "updated@gmail.com"
+}
+
+### DELETE student
+DELETE {{StudentAPI_HostAddress}}/api/students/3
